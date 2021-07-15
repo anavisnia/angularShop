@@ -1,0 +1,28 @@
+<form *ngIf="showUpdateForm" class="update-form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="type">Type:</label>
+        <input class="form-control" type="text" name="type" [(ngModel)]="type" id="type" placeholder="{{ product.type }}">
+    </div>
+
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input class="form-control" type="text" name="text" [(ngModel)]="name" id="name" placeholder=" {{ product.name }} ">
+    </div>
+
+    <div class="form-group">
+        <label for="quantity">Quantity:</label>
+        <input class="form-control" type="text" name="quantity" [(ngModel)]="quantity" id="quantity" placeholder=" {{product.quantity }}">
+    </div>
+
+    <div class="form-group">
+        <label for="price">Price:</label>
+        <input class="form-control" type="text" name="price" [(ngModel)]="price" id="price" placeholder=" {{product.price }}">
+    </div>
+
+    <div class="form-group">
+        <label for="quantity">Shop:</label>
+        <input class="form-control" type="text" name="shopName" [(ngModel)]="shopName" id="shopName" placeholder=" {{product.shopName }}">
+    </div>
+
+    <input type="submit" value="Update" class="btn btn-block  btn-outline-primary">
+</form>

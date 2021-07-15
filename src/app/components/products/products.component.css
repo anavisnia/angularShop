@@ -1,0 +1,16 @@
+h3 {
+  margin-top: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.products {
+  text-align: center;
+  width: 50%;
+  max-width: 1000px;
+  min-width: 660px;
+  margin: auto;
+  border: 1px solid rgb(201, 199, 199);
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 25%);
+}
