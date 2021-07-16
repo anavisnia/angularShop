@@ -26,7 +26,7 @@ export class ProductService {
     return this.http.delete<Product>(url);
   } 
 
-  updateProduct(product: Product) {
-    return this.http.post<Product>(this.apiUrl, product);
+  updateProduct(product: Product): Observable<Product> {
+    return this.http.post<Product>(this.apiUrl, product, httpOptions);
   }
 }

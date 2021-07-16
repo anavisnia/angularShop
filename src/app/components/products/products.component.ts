@@ -22,7 +22,14 @@ export class ProductsComponent implements OnInit {
   }
 
   updateProduct(toUpdateProduct: Product) {
-    this.productService.updateProduct(toUpdateProduct);
+    this.productService.updateProduct(toUpdateProduct) .subscribe(
+      (data) => { // Success
+        console.log(data)
+      },
+      (error) => {
+        console.error("Error: " + JSON.stringify(error));
+      }
+    );
   }
 
 }
