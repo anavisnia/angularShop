@@ -10,11 +10,13 @@ import { Observable, Subject } from 'rxjs';
 })
 export class ProductItemComponent implements OnInit {
   @Input() product!: Product;
+  @Input() updateProduct?: Product;
+  @Output() toUpdateProduct?: Product;
   subscription?: Subscription;
   @Output() onDeleteProduct: EventEmitter<Product> = new EventEmitter;
   @Output() onUpdateProduct: EventEmitter<Product> = new EventEmitter;
   // showUpdateForm?: boolean = false;
-  private subject = new Subject<any>();
+  // private subject = new Subject<any>();
 
   constructor() { }
 
@@ -25,8 +27,10 @@ export class ProductItemComponent implements OnInit {
     this.onDeleteProduct.emit(product);
   }
 
-  onUpdate(product: Product) {
-    this.onUpdateProduct.emit(product);
+  onUpdate(updateProduct: Product) {
+    console.log('form-update UPDATE input clicked');
+    this.toUpdateProduct = updateProduct;
+    this.onUpdateProduct.emit(this.toUpdateProduct);
   }
 
   // toggleUpdateForm(product: Product) {

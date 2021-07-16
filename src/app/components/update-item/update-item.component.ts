@@ -10,10 +10,10 @@ import { Subscription } from 'rxjs';
 export class UpdateItemComponent implements OnInit {
   @Input() product!: Product;
   @Output() onUpdateProduct: EventEmitter<Product> = new EventEmitter;
+  showUpdateForm?: boolean = true;
   name?: string;
   price?: number;
   quantity?: number;
-  showUpdateForm?: boolean = true;
   type?: string;
   shopName?: string;
   subscription?: Subscription;
@@ -37,6 +37,7 @@ export class UpdateItemComponent implements OnInit {
       shopName: this.shopName
     }
     console.log(this.product);
+    console.log(updateProduct);
 
     this.onUpdateProduct.emit(updateProduct);
 

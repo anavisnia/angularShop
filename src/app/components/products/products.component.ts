@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Product } from 'src/app/Product';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -9,6 +9,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ProductsComponent implements OnInit {
   products: Product[] = [];
+  @Input() toUpdateProduct?: Product;
 
   constructor(private productService: ProductService) { }
 
@@ -20,8 +21,8 @@ export class ProductsComponent implements OnInit {
     this.productService.deleteProduct(product).subscribe(() => this.products = this.products.filter(p => p.id !== product.id));
   }
 
-  updateProduct(product: Product) {
-    this.productService.updateProduct(product);
+  updateProduct(toUpdateProduct: Product) {
+    this.productService.updateProduct(toUpdateProduct);
   }
 
 }
