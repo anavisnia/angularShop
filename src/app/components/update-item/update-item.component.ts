@@ -11,6 +11,7 @@ export class UpdateItemComponent implements OnInit {
   @Input() product!: Product;
   @Output() onUpdateProduct: EventEmitter<Product> = new EventEmitter;
   showUpdateForm?: boolean = true;
+  id?: number;
   name?: string;
   price?: number;
   quantity?: number;
@@ -30,6 +31,7 @@ export class UpdateItemComponent implements OnInit {
     }
 
     const updateProduct : Product = {
+      id: this.product.id,
       name: this.name,
       price: this.price,
       quantity: this.quantity,
