@@ -10,14 +10,11 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./product-item.component.css']
 })
 export class ProductItemComponent implements OnInit {
+  products: Product[] = [];
   @Input() product!: Product;
   @Input() updateProduct?: Product;
-  // @Output() toUpdateProduct?: Product;
   subscription?: Subscription;
   @Output() onDeleteProduct: EventEmitter<Product> = new EventEmitter;
-  @Output() onUpdateProduct: EventEmitter<Product> = new EventEmitter;
-  // showUpdateForm?: boolean = false;
-  // private subject = new Subject<any>();
 
   constructor(private productService: ProductService) { }
 
@@ -29,14 +26,8 @@ export class ProductItemComponent implements OnInit {
   }
 
   onUpdate(updateProduct: Product) {
-    // this.onUpdateProduct.emit(updateProduct);
-    this.productService.updateProduct(updateProduct)
+    this.productService.updateProduct(updateProduct).subscribe(() => this.products.push(updateProduct));
   }
-
-  // toggleUpdateForm(product: Product) {
-  //   this.showUpdateForm = !this.showUpdateForm;
-  //   this.subject.next(this.showUpdateForm);
-  // }
 
 
 }

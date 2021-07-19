@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { Product } from 'src/app/Product';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -20,16 +20,5 @@ export class ProductsComponent implements OnInit {
   deleteProduct(product: Product) {
     this.productService.deleteProduct(product).subscribe(() => this.products = this.products.filter(p => p.id !== product.id));
   }
-
-  // updateProduct(toUpdateProduct: Product) {
-  //   this.productService.updateProduct(toUpdateProduct).subscribe(
-  //     (data) => { // Success
-  //       console.log(data)
-  //     },
-  //     (error) => {
-  //       console.error("Error: " + JSON.stringify(error));
-  //     }
-  //   );
-  // }
 
 }
