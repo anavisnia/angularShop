@@ -1,5 +1,6 @@
 <!-- should it call a function to emit update? like (onUpdateProduct)="onUpdate(product)" smth like that? -->
 <app-update-item [product]="product" (onUpdateProduct)="onUpdate($event)"></app-update-item>
+<app-buy-item [product]="product" (onBuyProduct)="onBuy($event)"></app-buy-item>
 <div class="product-item card">
     <h3 class="card-header">{{ product.name }}</h3>
     <ul class="list-group list-group-flush">
@@ -8,6 +9,7 @@
         <li class="list-group-item">Price: {{ product.price }} Eur</li>
         <li class="list-group-item">Shop: {{ product.shopName }}</li>
     </ul>
-    <button type="button" class="btn btn-outline-warning">Edit</button>
+    <button type="button" class="btn btn-outline-success" (click)="onBuyClick()">Buy</button>
+    <button type="button" class="btn btn-outline-warning"(click)="onEditClick()">Edit</button>
     <button type="button" class="btn btn-outline-danger" (click)="onDelete(product)">Delete</button>
 </div>

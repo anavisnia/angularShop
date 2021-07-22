@@ -1,0 +1,14 @@
+.buy-form {
+  display: inline-block;
+  max-width: 200px;
+  margin: 10px 5px;
+  border: 1px solid rgb(216, 214, 214);
+  border-radius: 5px;
+  padding: 0 5px;
+}
+
+.buy-form > input.btn {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 10px;
+}

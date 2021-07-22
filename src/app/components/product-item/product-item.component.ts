@@ -13,6 +13,7 @@ export class ProductItemComponent implements OnInit {
   products: Product[] = [];
   @Input() product!: Product;
   @Input() updateProduct?: Product;
+  @Input() buyProduct?: Product;
   subscription?: Subscription;
   @Output() onDeleteProduct: EventEmitter<Product> = new EventEmitter;
 
@@ -27,6 +28,18 @@ export class ProductItemComponent implements OnInit {
 
   onUpdate(updateProduct: Product) {
     this.productService.updateProduct(updateProduct).subscribe(() => this.products.push(updateProduct));
+  }
+
+  onBuy(buyProduct: Product) {
+    this.productService.buyProduct(buyProduct).subscribe(() => this.products.push(buyProduct));
+  }
+
+  onBuyClick() {
+
+  }
+
+  onEditClick() {
+    
   }
 
 
