@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ProductItemComponent } from './components/product-item/product-item.component';
 import { UpdateItemComponent } from './components/update-item/update-item.component';
+import { AddItemComponent } from './components/add-item/add-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
     ProductItemComponent,
-    UpdateItemComponent
+    UpdateItemComponent,
+    AddItemComponent
   ],
   imports: [
     BrowserModule,
