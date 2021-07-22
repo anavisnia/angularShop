@@ -1,27 +1,27 @@
 <form *ngIf="showAddForm" class="add-form" (ngSubmit)="onSubmit()">
     <div class="form-group">
         <label for="type">Type:</label>
-        <input class="form-control" type="text" name="type" [(ngModel)]="type" id="type" placeholder="">
+        <input class="form-control" type="text" name="type" [(ngModel)]="type" id="type" placeholder="Enter type">
     </div>
 
     <div class="form-group">
         <label for="name">Name:</label>
-        <input class="form-control" type="text" name="text" [(ngModel)]="name" id="name" placeholder="">
+        <input class="form-control" type="text" name="text" [(ngModel)]="name" id="name" placeholder="Enter product's name">
     </div>
 
     <div class="form-group">
         <label for="quantity">Quantity:</label>
-        <input class="form-control" type="text" name="quantity" [(ngModel)]="quantity" id="quantity" placeholder="">
+        <input class="form-control" type="text" name="quantity" [(ngModel)]="quantity" id="quantity" placeholder="Enter quantity">
     </div>
 
     <div class="form-group">
         <label for="price">Price:</label>
-        <input class="form-control" type="text" name="price" [(ngModel)]="price" id="price" placeholder="">
+        <input class="form-control" type="text" name="price" [(ngModel)]="price" id="price" placeholder="Enter price">
     </div>
 
     <div class="form-group">
         <label for="quantity">Shop:</label>
-        <input class="form-control" type="text" name="shopName" [(ngModel)]="shopName" id="shopName" placeholder="">
+        <input class="form-control" type="text" name="shopName" [(ngModel)]="shopName" id="shopName" placeholder="Enter shop's name">
     </div>
 
     <input type="submit" value="Add Product" class="btn btn-block  btn-outline-primary">

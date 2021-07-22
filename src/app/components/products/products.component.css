@@ -14,3 +14,11 @@ h3 {
   display: grid;
   grid-template-columns: repeat(auto-fill, 25%);
 }
+
+.add-product {
+  padding: 5px 10px;
+  width: 50%;
+  max-width: 500px;
+  min-width: 420px;
+  margin: auto;
+}
