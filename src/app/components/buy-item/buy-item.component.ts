@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from 'src/app/Product';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-buy-item',
@@ -9,12 +10,13 @@ import { Product } from 'src/app/Product';
 export class BuyItemComponent implements OnInit {
   @Output() onBuyProduct: EventEmitter<Product> = new EventEmitter;
   @Input() product!: Product;
-  showBuyForm?: boolean = true;
   name?: string;
   price?: number;
   quantity?: number;
+  subscription?: Subscription;
 
-  constructor() { }
+  constructor() { 
+  }
 
   ngOnInit(): void {
   }

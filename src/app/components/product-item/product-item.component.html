@@ -1,6 +1,6 @@
 <!-- should it call a function to emit update? like (onUpdateProduct)="onUpdate(product)" smth like that? -->
-<app-update-item [product]="product" (onUpdateProduct)="onUpdate($event)"></app-update-item>
-<app-buy-item [product]="product" (onBuyProduct)="onBuy($event)"></app-buy-item>
+<app-update-item *ngIf="showUpdateForm" [product]="product" (onUpdateProduct)="onUpdate($event)"></app-update-item>
+<app-buy-item *ngIf="showBuyForm" [product]="product" (onBuyProduct)="onBuy($event)"></app-buy-item>
 <div class="product-item card">
     <h3 class="card-header">{{ product.name }}</h3>
     <ul class="list-group list-group-flush">

@@ -1,7 +1,6 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Product } from 'src/app/Product';
 import { Subscription } from 'rxjs';
-import { Observable, Subject } from 'rxjs';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -14,6 +13,8 @@ export class ProductItemComponent implements OnInit {
   @Input() product!: Product;
   @Input() updateProduct?: Product;
   @Input() buyProduct?: Product;
+  showBuyForm?: boolean;
+  showUpdateForm?: boolean;
   subscription?: Subscription;
   @Output() onDeleteProduct: EventEmitter<Product> = new EventEmitter;
 
@@ -34,12 +35,12 @@ export class ProductItemComponent implements OnInit {
     this.productService.buyProduct(buyProduct).subscribe(() => this.products.push(buyProduct));
   }
 
-  onBuyClick() {
-
+  onBuyClick(): void {
+    this.showBuyForm = !this.showBuyForm;
   }
 
-  onEditClick() {
-    
+  onEditClick(): void {
+    this.showUpdateForm = !this.showUpdateForm;
   }
 
 

@@ -10,7 +10,6 @@ import { Subscription } from 'rxjs';
 export class UpdateItemComponent implements OnInit {
   @Input() product!: Product;
   @Output() onUpdateProduct: EventEmitter<Product> = new EventEmitter;
-  showUpdateForm?: boolean = true;
   id?: number;
   name?: string;
   price?: number;
