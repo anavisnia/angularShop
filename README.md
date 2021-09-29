@@ -1,4 +1,4 @@
-# Angular WEB API Shop
+# FrontEnd Angular WEB API Shop
 #### Link to the backend:
 https://github.com/anavisnia/WebShop
 
